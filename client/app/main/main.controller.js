@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('votingApp')
-    .controller('MainCtrl', function ($scope, $http, $location) {
+    .controller('MainCtrl', function ($scope, $http, $location, Auth) {
         $scope.awesomeThings = [];
+        $scope.isLoggedIn = Auth.isLoggedIn;
 
         $http.get('/api/things').success(function (awesomeThings) {
             $scope.awesomeThings = awesomeThings;
