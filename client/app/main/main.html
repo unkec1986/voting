@@ -43,4 +43,18 @@
 
 <div ng-show="isLoggedIn()">
     <div loggedin></div>
+
+    <div class="alert alert-danger" ng-show="pollExists && !posts">
+        <div class="strong">Uh, oh!</div>
+        <p>You already have a poll with this name!</p>
+    </div>
+
+    <div new-poll ng-show="page === 'newPoll'"></div>
+    <div new-poll-posted ng-show="page === 'newPollPosted'"></div>
+
+    <div my-polls ng-show="page === 'myPolls'"></div>
+    <div my-results ng-show="page === 'results'"></div>
+
 </div>
+
+<div vote-poll ng-show="page === 'votePoll'"></div>
